@@ -2,3 +2,5 @@ plotly
 pandas
 streamlit
 openpyxl 
+google-generativeai
+numpy
