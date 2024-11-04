@@ -5,13 +5,13 @@ from module1 import extract_lab_values
 from module2 import prepare_database_ready_answers
 
 # Streamlit setup for clinical trial data filtering and processing
-st.set_page_config(page_title="Clinical Trials Data Processor", layout="wide")
+st.set_page_config(page_title="SmartLab AI Clinical Data Processor", layout="wide")
 
 # Display the image at the top of the page
 st.image("1.png", use_column_width=True)
 
 # Title directly below the image
-st.title("Clinical Trials Data Processor - Labs")
+st.title("SmartLab AI Clinical Data Processor")
 
 # Load the clinical trials data file directly
 @st.cache_data
