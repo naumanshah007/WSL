@@ -91,13 +91,13 @@ if 'df_all' in locals():
     df_all['concatenated_text'] = df_all.apply(lambda row: "\n".join([str(cell) for cell in row]), axis=1)
     
     # Sidebar filter inputs
-    st.sidebar.header("Filter Records by any of following Keywords/ Fields")
+    st.sidebar.header("Filter Trials by Following Keywords/ Fields")
     nct_id = st.sidebar.text_input("Enter NCTId")
     conditions = st.sidebar.text_input("Enter Condition Keywords")
     brief_title = st.sidebar.text_input("Enter Brief Title Keywords")
     eligibility_criteria = st.sidebar.text_input("Enter Eligibility Criteria Keywords")
     
-    if st.sidebar.button("Filter Records"):
+    if st.sidebar.button("Filter Clinical Trials"):
         # Apply filters and store results in session state
         mask = (
             df_all['NCTId'].str.contains(nct_id, case=False) & 
@@ -106,7 +106,7 @@ if 'df_all' in locals():
             df_all['EligibilityCriteria'].str.contains(eligibility_criteria, case=False)
         )
         st.session_state.df_filtered = df_all[mask]
-        st.write("Filtered Records:")
+        st.write("Filtered Clinical Trials:")
         st.dataframe(st.session_state.df_filtered)
     
     # Display processing options if filtered data is available
